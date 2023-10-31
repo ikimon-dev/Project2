@@ -54,8 +54,8 @@ COLOR = dict(
     white=1
 )
 # image size
-SIZE = (880, 528)
-MAIN_WIDTH = 560
+SIZE = (1448, 1072)
+MAIN_WIDTH = 1000
 # create a new image
 img_b = Image.new('1', SIZE, COLOR['white'])
 img_r = Image.new('1', SIZE, COLOR['white'])
@@ -143,9 +143,9 @@ for h, event in enumerate(events[:event_count]):
     dt = ".".join([str(int(i)) for i in event[1][0].split("-")[1:]])
     # show the time of schedule
     if len(event[1]) != 1:
-        content = event[0][:8] + ('' if len(event[0]) < 9 else "…")
+        content = event[0][:16] + ('' if len(event[0]) < 16 else "…")
     else:
-        content = event[0][:11] + ('' if len(event[0]) < 12 else "…")
+        content = event[0][:20] + ('' if len(event[0]) < 20 else "…")
     text = f'{dt + "  " * ( 5 - len(dt))}' \
         + f'{f" {event[1][1][:5]}" if len(event[1]) != 1 else ""}' \
         + f' {content}'
